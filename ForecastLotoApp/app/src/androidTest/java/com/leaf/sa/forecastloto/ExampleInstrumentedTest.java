@@ -1,4 +1,4 @@
-package com.leaf.sa.forecastlotoapp;
+package com.leaf.sa.forecastloto;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.leaf.sa.forecastlotoapp", appContext.getPackageName());
+        assertEquals("com.leaf.sa.forecastloto", appContext.getPackageName());
     }
 }

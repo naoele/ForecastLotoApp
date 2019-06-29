@@ -1,4 +1,4 @@
-package com.leaf.sa.forecastlotoapp;
+package com.leaf.sa.forecastloto;
 
 import org.junit.Test;
 
