@@ -1,5 +1,6 @@
 package com.leaf.sa.forecastlotoapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,7 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,28 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public void onClick(View v){
+        // ボタンクリックイベント
+        Intent intent;
+        switch (v.getBottom()){
+            case R.id.btn_loto6:
+//                intent = new Intent(getApplication(), Loto6Activity.class);
+//                startActivity(intent);
+                break;
+
+            case R.id.btn_loto7:
+//                intent = new Intent(getApplication(), AbnormalEventRegisterActivity.class);
+//                startActivity(intent);
+                break;
+
+            case R.id.btn_miniloto:
+//                intent = new Intent(getApplication(), AbnormalEventRegisterActivity.class);
+//                startActivity(intent);
+                break;
+        }
     }
 
     @Override

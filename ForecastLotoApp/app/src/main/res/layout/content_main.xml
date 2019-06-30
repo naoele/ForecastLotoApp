@@ -18,10 +18,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button1" />
+        app:layout_constraintBottom_toTopOf="@id/btn_loto6" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btn_loto6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ロト6"
@@ -30,13 +30,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button2"
+        app:layout_constraintBottom_toTopOf="@id/btn_loto7"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintHorizontal_weight="1"
         />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_loto7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ロト7"
@@ -44,12 +44,12 @@
         android:textSize="@dimen/size_xl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1"
-        app:layout_constraintBottom_toTopOf="@id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_loto6"
+        app:layout_constraintBottom_toTopOf="@id/btn_miniloto"
         app:layout_constraintVertical_chainStyle="packed"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_miniloto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ミニロト"
@@ -57,7 +57,7 @@
         android:textSize="@dimen/size_xl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button2"
+        app:layout_constraintTop_toBottomOf="@id/btn_loto7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_chainStyle="packed"/>
 
