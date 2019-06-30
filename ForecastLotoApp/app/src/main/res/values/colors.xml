@@ -3,4 +3,17 @@
     <color name="colorPrimary">#e50000</color>
     <color name="colorPrimaryDark">#c4001d</color>
     <color name="colorAccent">#ffeb32</color>
+
+    <!-- base color -->
+    <color name="white">#fef9ff</color>
+    <color name="black">#0e0e0e</color>
+
+    <!-- 背景色 -->
+    <color name="baseBackground">#eeeeee</color>
+
+    <!-- ボタンカラー -->
+    <color name="btn">#ffffff</color>
+
+
+
 </resources>

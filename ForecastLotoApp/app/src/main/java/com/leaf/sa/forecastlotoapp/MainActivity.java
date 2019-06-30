@@ -1,4 +1,4 @@
-package com.leaf.sa.forecastloto;
+package com.leaf.sa.forecastlotoapp;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
