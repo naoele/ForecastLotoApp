@@ -34,7 +34,14 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        
+
+        <activity
+            android:name=".MiniLotoActivity"
+            android:label="@string/title_activity_miniloto"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
     </application>
 
 </manifest>

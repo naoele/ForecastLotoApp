@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MiniLotoActivity"
+    tools:showIn="@layout/app_bar_mini_loto">
+
+    <!-- 1行目 -->
+    <TextView
+        android:id="@+id/txt_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_1"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_8"
+        app:layout_constraintEnd_toStartOf="@id/txt_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_2"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_8"
+        app:layout_constraintEnd_toStartOf="@id/txt_3"
+        app:layout_constraintStart_toEndOf="@id/txt_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_3"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_8"
+        app:layout_constraintEnd_toStartOf="@id/txt_4"
+        app:layout_constraintStart_toEndOf="@id/txt_2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_4"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_8"
+        app:layout_constraintEnd_toStartOf="@id/txt_5"
+        app:layout_constraintStart_toEndOf="@id/txt_3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_5"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_8"
+        app:layout_constraintEnd_toStartOf="@id/txt_6"
+        app:layout_constraintStart_toEndOf="@id/txt_4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_6"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_8"
+        app:layout_constraintEnd_toStartOf="@id/txt_7"
+        app:layout_constraintStart_toEndOf="@id/txt_5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_7"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_6"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2行目 -->
+    <TextView
+        android:id="@+id/txt_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_8"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_16"
+        app:layout_constraintEnd_toStartOf="@id/txt_9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_1" />
+
+    <TextView
+        android:id="@+id/txt_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_9"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_16"
+        app:layout_constraintEnd_toStartOf="@id/txt_10"
+        app:layout_constraintStart_toEndOf="@id/txt_8"
+        app:layout_constraintTop_toBottomOf="@id/txt_1" />
+
+    <TextView
+        android:id="@+id/txt_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_10"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_16"
+        app:layout_constraintEnd_toStartOf="@id/txt_11"
+        app:layout_constraintStart_toEndOf="@id/txt_9"
+        app:layout_constraintTop_toBottomOf="@id/txt_1" />
+
+    <TextView
+        android:id="@+id/txt_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_11"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_16"
+        app:layout_constraintEnd_toStartOf="@id/txt_12"
+        app:layout_constraintStart_toEndOf="@id/txt_10"
+        app:layout_constraintTop_toBottomOf="@id/txt_1" />
+
+    <TextView
+        android:id="@+id/txt_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_12"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_16"
+        app:layout_constraintEnd_toStartOf="@id/txt_13"
+        app:layout_constraintStart_toEndOf="@id/txt_11"
+        app:layout_constraintTop_toBottomOf="@id/txt_1" />
+
+    <TextView
+        android:id="@+id/txt_13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_13"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_16"
+        app:layout_constraintEnd_toStartOf="@id/txt_14"
+        app:layout_constraintStart_toEndOf="@id/txt_12"
+        app:layout_constraintTop_toBottomOf="@id/txt_1" />
+
+    <TextView
+        android:id="@+id/txt_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_14"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_16"
+        app:layout_constraintEnd_toStartOf="@id/txt_15"
+        app:layout_constraintStart_toEndOf="@id/txt_13"
+        app:layout_constraintTop_toBottomOf="@id/txt_1" />
+
+    <TextView
+        android:id="@+id/txt_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_15"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_14"
+        app:layout_constraintTop_toBottomOf="@id/txt_1" />
+
+    <!-- 3行目 -->
+    <TextView
+        android:id="@+id/txt_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_16"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_24"
+        app:layout_constraintEnd_toStartOf="@id/txt_17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_8" />
+
+    <TextView
+        android:id="@+id/txt_17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_17"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_24"
+        app:layout_constraintEnd_toStartOf="@id/txt_18"
+        app:layout_constraintStart_toEndOf="@id/txt_16"
+        app:layout_constraintTop_toBottomOf="@id/txt_8" />
+
+    <TextView
+        android:id="@+id/txt_18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_18"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_24"
+        app:layout_constraintEnd_toStartOf="@id/txt_19"
+        app:layout_constraintStart_toEndOf="@id/txt_17"
+        app:layout_constraintTop_toBottomOf="@id/txt_8" />
+
+    <TextView
+        android:id="@+id/txt_19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_19"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_24"
+        app:layout_constraintEnd_toStartOf="@id/txt_20"
+        app:layout_constraintStart_toEndOf="@id/txt_18"
+        app:layout_constraintTop_toBottomOf="@id/txt_8" />
+
+    <TextView
+        android:id="@+id/txt_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_20"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_24"
+        app:layout_constraintEnd_toStartOf="@id/txt_21"
+        app:layout_constraintStart_toEndOf="@id/txt_19"
+        app:layout_constraintTop_toBottomOf="@id/txt_8" />
+
+    <TextView
+        android:id="@+id/txt_21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_21"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_24"
+        app:layout_constraintEnd_toStartOf="@id/txt_22"
+        app:layout_constraintStart_toEndOf="@id/txt_20"
+        app:layout_constraintTop_toBottomOf="@id/txt_8" />
+
+    <TextView
+        android:id="@+id/txt_22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_22"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_24"
+        app:layout_constraintEnd_toStartOf="@id/txt_23"
+        app:layout_constraintStart_toEndOf="@id/txt_21"
+        app:layout_constraintTop_toBottomOf="@id/txt_8" />
+
+    <TextView
+        android:id="@+id/txt_23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_23"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toTopOf="@id/txt_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_22"
+        app:layout_constraintTop_toBottomOf="@id/txt_8" />
+
+    <!-- 4行目 -->
+    <TextView
+        android:id="@+id/txt_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_24"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/txt_25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_25"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_26"
+        app:layout_constraintStart_toEndOf="@id/txt_24"
+        app:layout_constraintTop_toBottomOf="@id/txt_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/txt_26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_26"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_27"
+        app:layout_constraintStart_toEndOf="@id/txt_25"
+        app:layout_constraintTop_toBottomOf="@id/txt_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/txt_27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_27"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_28"
+        app:layout_constraintStart_toEndOf="@id/txt_26"
+        app:layout_constraintTop_toBottomOf="@id/txt_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/txt_28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_28"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_29"
+        app:layout_constraintStart_toEndOf="@id/txt_27"
+        app:layout_constraintTop_toBottomOf="@id/txt_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/txt_29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_29"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_30"
+        app:layout_constraintStart_toEndOf="@id/txt_28"
+        app:layout_constraintTop_toBottomOf="@id/txt_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/txt_30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_30"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_31"
+        app:layout_constraintStart_toEndOf="@id/txt_29"
+        app:layout_constraintTop_toBottomOf="@id/txt_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/txt_31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_31"
+        android:textColor="@color/txt_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_30"
+        app:layout_constraintTop_toBottomOf="@id/txt_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+</android.support.constraint.ConstraintLayout>
