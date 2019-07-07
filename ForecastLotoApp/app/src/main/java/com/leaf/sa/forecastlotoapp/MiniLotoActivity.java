@@ -13,9 +13,26 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Toast;
+
+import com.leaf.sa.forecastlotoapp.Utilities.RandomUtil;
+import com.leaf.sa.forecastlotoapp.Utilities.ViewControl;
+
+import java.util.ArrayList;
 
 public class MiniLotoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    // ----------------------------------------------------------------------
+    // 固定値
+
+    /**
+     * ミニロト予想画面で使用する数字の数
+     */
+    private int TXET_VIEW_NUM = 31;
+
+    // ----------------------------------------------------------------------
+    // メソッド
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +48,16 @@ public class MiniLotoActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                // 全テキストビューを初期化する
+                ViewControl.getInstance().initTextView(MiniLotoActivity.this, TXET_VIEW_NUM);
+
+                // 乱数生成
+                ArrayList<Integer> randomList = RandomUtil.getInstance().run(TXET_VIEW_NUM);
+
+                // ランダムにテキストビューをOFFにする
+                ViewControl.getInstance().makeTextViewOff(MiniLotoActivity.this, randomList);
+
+                Toast.makeText(getApplicationContext() , "ミニロトの数字を半分予想しました。", Toast.LENGTH_SHORT).show();
             }
         });
 
