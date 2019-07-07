@@ -28,6 +28,13 @@
 
         </activity>
 
+        <activity
+            android:name=".Loto7Activity"
+            android:label="@string/title_activity_loto7"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        
     </application>
 
 </manifest>
