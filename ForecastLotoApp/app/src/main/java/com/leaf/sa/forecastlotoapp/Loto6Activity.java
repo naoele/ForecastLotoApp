@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.Gravity;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,11 +15,23 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Toast;
 
+import com.leaf.sa.forecastlotoapp.Utilities.RandomUtil;
 import com.leaf.sa.forecastlotoapp.Utilities.ViewControl;
+
+import java.util.ArrayList;
 
 public class Loto6Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    // ----------------------------------------------------------------------
+    // 固定値
+
+    private int TXET_VIEW_NUM = 43;
+
+    // ----------------------------------------------------------------------
+    // メソッド
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +47,16 @@ public class Loto6Activity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                // 全テキストビューを初期化する
+                ViewControl.getInstance().initTextView(Loto6Activity.this, TXET_VIEW_NUM);
+
+                // 乱数生成
+                ArrayList<Integer> randomList = RandomUtil.getInstance().run(TXET_VIEW_NUM);
+
+                // ランダムにテキストビューをOFFにする
+                ViewControl.getInstance().makeTextViewOff(Loto6Activity.this, randomList);
+
+                Toast.makeText(getApplicationContext() , "ロト6の数字を半分予想しました。", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -47,10 +68,6 @@ public class Loto6Activity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
-//        ViewControl.getInstance().createLotoNumbers(this,
-//                (ConstraintLayout) findViewById(R.id.lyt_base), 43,
-//                Constants.LOTO6_LEFT_SIDE_NUMBERS, Constants.LOTO6_RIGHT_SIDE_NUMBERS);
     }
 
     @Override
