@@ -20,7 +20,16 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    String TAG = "MainActivity";
+    // ----------------------------------------------------------------------
+    // 固定値
+
+    /**
+     * MainActivityのタグ
+     */
+    private String TAG = "MainActivity";
+
+    // ----------------------------------------------------------------------
+    // メソッド
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
