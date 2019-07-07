@@ -14,6 +14,8 @@
     <!-- ボタンカラー -->
     <color name="btn">#ffffff</color>
 
-
+    <!-- 文字色 -->
+    <color name="txt_on">#0e0e0e</color>
+    <color name="txt_off">#cdcdcd</color>
 
 </resources>

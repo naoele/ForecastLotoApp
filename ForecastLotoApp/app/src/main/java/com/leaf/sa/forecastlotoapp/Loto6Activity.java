@@ -1,6 +1,7 @@
 package com.leaf.sa.forecastlotoapp;
 
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.leaf.sa.forecastlotoapp.Utilities.ViewControl;
+
 public class Loto6Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -21,8 +24,12 @@ public class Loto6Activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loto6);
+
+        // ツールバー
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // 更新ボタンイベント
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +38,8 @@ public class Loto6Activity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
+        // ドロワーメニュー
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -38,6 +47,10 @@ public class Loto6Activity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+//        ViewControl.getInstance().createLotoNumbers(this,
+//                (ConstraintLayout) findViewById(R.id.lyt_base), 43,
+//                Constants.LOTO6_LEFT_SIDE_NUMBERS, Constants.LOTO6_RIGHT_SIDE_NUMBERS);
     }
 
     @Override

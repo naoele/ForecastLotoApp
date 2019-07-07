@@ -13,5 +13,55 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string name="title_activity_loto6">Loto6Activity</string>
+
+    <!-- 画面タイトル -->
+    <string name="title_activity_loto6">ロト6予想</string>
+    <string name="title_activity_loto7">ロト7予想</string>
+    <string name="title_activity_miniloto">ミニロト予想</string>
+
+    <!-- 予想数字 -->
+    <string name="txt_1">1</string>
+    <string name="txt_2">2</string>
+    <string name="txt_3">3</string>
+    <string name="txt_4">4</string>
+    <string name="txt_5">5</string>
+    <string name="txt_6">6</string>
+    <string name="txt_7">7</string>
+    <string name="txt_8">8</string>
+    <string name="txt_9">9</string>
+    <string name="txt_10">10</string>
+    <string name="txt_11">11</string>
+    <string name="txt_12">12</string>
+    <string name="txt_13">13</string>
+    <string name="txt_14">14</string>
+    <string name="txt_15">15</string>
+    <string name="txt_16">16</string>
+    <string name="txt_17">17</string>
+    <string name="txt_18">18</string>
+    <string name="txt_19">19</string>
+    <string name="txt_20">20</string>
+    <string name="txt_21">21</string>
+    <string name="txt_22">22</string>
+    <string name="txt_23">23</string>
+    <string name="txt_24">24</string>
+    <string name="txt_25">25</string>
+    <string name="txt_26">26</string>
+    <string name="txt_27">27</string>
+    <string name="txt_28">28</string>
+    <string name="txt_29">29</string>
+    <string name="txt_30">30</string>
+    <string name="txt_31">31</string>
+    <string name="txt_32">32</string>
+    <string name="txt_33">33</string>
+    <string name="txt_34">34</string>
+    <string name="txt_35">35</string>
+    <string name="txt_36">36</string>
+    <string name="txt_37">37</string>
+    <string name="txt_38">38</string>
+    <string name="txt_39">39</string>
+    <string name="txt_40">40</string>
+    <string name="txt_41">41</string>
+    <string name="txt_42">42</string>
+    <string name="txt_43">43</string>
+
 </resources>
