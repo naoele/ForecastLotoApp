@@ -7,12 +7,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <!-- ドロワーメニュー名 -->
+    <string name="menu_loto6">ロト6予想画面</string>
+    <string name="menu_loto7">ロト7予想画面</string>
+    <string name="menu_mini_loto">ミニロト予想画面</string>
 
     <!-- 画面タイトル -->
     <string name="title_activity_loto6">ロト6予想</string>

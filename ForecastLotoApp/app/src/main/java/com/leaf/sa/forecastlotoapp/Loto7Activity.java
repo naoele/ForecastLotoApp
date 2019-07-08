@@ -57,18 +57,18 @@ public class Loto7Activity extends AppCompatActivity
                 // ランダムにテキストビューをOFFにする
                 ViewControl.getInstance().makeTextViewOff(Loto7Activity.this, randomList);
 
-                Toast.makeText(getApplicationContext() , "ロト7の数字を半分予想しました。", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "ロト7の数字を半分予想しました。", Toast.LENGTH_SHORT).show();
             }
         });
 
         // ドロワーメニュー
-//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-//        NavigationView navigationView = findViewById(R.id.nav_view);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.addDrawerListener(toggle);
-//        toggle.syncState();
-//        navigationView.setNavigationItemSelectedListener(this);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -84,7 +84,6 @@ public class Loto7Activity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.loto7, menu);
         return true;
     }
 
@@ -94,11 +93,6 @@ public class Loto7Activity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -114,12 +108,6 @@ public class Loto7Activity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
