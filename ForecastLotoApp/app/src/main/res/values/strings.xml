@@ -8,6 +8,7 @@
     <string name="action_settings">Settings</string>
 
     <!-- ドロワーメニュー名 -->
+    <string name="menu_contents">メニュー</string>
     <string name="menu_loto6">ロト6予想画面</string>
     <string name="menu_loto7">ロト7予想画面</string>
     <string name="menu_mini_loto">ミニロト予想画面</string>

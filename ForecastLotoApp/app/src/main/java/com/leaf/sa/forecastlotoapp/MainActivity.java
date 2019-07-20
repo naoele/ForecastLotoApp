@@ -107,18 +107,33 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+    /**
+     * ドロワーメニューイベント処理
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+        if (id == R.id.nav_main) {
+            Log.d(TAG, "メイン画面へ遷移");
+            Intent intent = new Intent(getApplication(), MainActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_loto_6) {
+            Log.d(TAG, "ロト6予想画面へ遷移");
+            Intent intent = new Intent(getApplication(), Loto6Activity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_loto_7) {
+            Log.d(TAG, "ロト7予想画面へ遷移");
+            Intent intent = new Intent(getApplication(), Loto7Activity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_mini_loto) {
+            Log.d(TAG, "ミニロト予想画面へ遷移");
+            Intent intent = new Intent(getApplication(), MiniLotoActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -1,8 +1,10 @@
 package com.leaf.sa.forecastlotoapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -31,6 +33,11 @@ public class MiniLotoActivity extends AppCompatActivity
      */
     private int TXET_VIEW_NUM = 31;
 
+    /**
+     * MiniLotoActivityのタグ
+     */
+    private String TAG = "MiniLotoActivity";
+
     // ----------------------------------------------------------------------
     // メソッド
 
@@ -57,7 +64,7 @@ public class MiniLotoActivity extends AppCompatActivity
                 // ランダムにテキストビューをOFFにする
                 ViewControl.getInstance().makeTextViewOff(MiniLotoActivity.this, randomList);
 
-                Toast.makeText(getApplicationContext() , "ミニロトの数字を半分予想しました。", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "ミニロトの数字を半分予想しました。", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -97,18 +104,33 @@ public class MiniLotoActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+    /**
+     * ドロワーメニューイベント処理
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+        if (id == R.id.nav_main) {
+            Log.d(TAG, "メイン画面へ遷移");
+            Intent intent = new Intent(getApplication(), MainActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_loto_6) {
+            Log.d(TAG, "ロト6予想画面へ遷移");
+            Intent intent = new Intent(getApplication(), Loto6Activity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_loto_7) {
+            Log.d(TAG, "ロト7予想画面へ遷移");
+            Intent intent = new Intent(getApplication(), Loto7Activity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_mini_loto) {
+            Log.d(TAG, "ミニロト予想画面へ遷移");
+            Intent intent = new Intent(getApplication(), MiniLotoActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
