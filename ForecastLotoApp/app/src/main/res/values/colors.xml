@@ -18,4 +18,7 @@
     <color name="txt_on">#07040f</color>
     <color name="txt_off">#cdcdcd</color>
 
+    <!-- 文字色 -->
+    <color name="fab_off">#cbcc6d</color>
+
 </resources>

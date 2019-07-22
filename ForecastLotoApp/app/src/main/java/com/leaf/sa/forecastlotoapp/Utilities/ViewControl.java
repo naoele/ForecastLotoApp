@@ -2,14 +2,14 @@ package com.leaf.sa.forecastlotoapp.Utilities;
 
 import android.app.Activity;
 import android.content.res.Resources;
-import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
-import android.view.View;
 import android.widget.TextView;
 
 import com.leaf.sa.forecastlotoapp.R;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ViewControl {
 
@@ -41,12 +41,15 @@ public class ViewControl {
      * @param activity
      * @param ids
      */
-    public void makeTextViewOff(Activity activity, ArrayList<Integer> ids) {
+    public Set<String> makeTextViewOff(Activity activity, ArrayList<Integer> ids) {
         Resources res = activity.getResources();
+        Set<String> viewNames = new HashSet<>();
         for (int id : ids) {
             String viewName = ID_PREFIX_TXV + id;
             setTextViewOff(res, viewName, activity);
+            viewNames.add(viewName);
         }
+        return viewNames;
     }
 
     /**
