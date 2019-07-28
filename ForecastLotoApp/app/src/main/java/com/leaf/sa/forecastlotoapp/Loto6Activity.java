@@ -59,41 +59,17 @@ public class Loto6Activity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // 更新ボタンイベント
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // その日に実行済みか
-                if(!isExecuted){
-                    // 全テキストビューを初期化する
-                    ViewControl.getInstance().initTextView(Loto6Activity.this, TXET_VIEW_NUM);
-
-                    // 乱数生成
-                    ArrayList<Integer> randomList = RandomUtil.getInstance().run(TXET_VIEW_NUM);
-
-                    // ランダムにテキストビューをOFFにする
-                    Set<String> offViewList = ViewControl.getInstance().makeTextViewOff(Loto6Activity.this, randomList);
-
-                    // 処理した時間を保存する
-//                    Date today = new Date();
-                    Date today = new SimpleDateFormat("yyyy/MM/dd").parse("2019/07/19");
-                    String saveDate = String.valueOf(new SimpleDateFormat("yyyy/MM/dd").format(new Date()));
-                    TmpControl.getInstance().saveString(Loto6Activity.this, Constants.LOTO6_TIME_KEY, saveDate);
-
-                    // offにしたテキストビューの名前リストを保存する
-                    TmpControl.getInstance().saveStringSet(Loto6Activity.this, Constants.LOTO6_TIME_KEY, offViewList);
-
-                    Toast.makeText(getApplicationContext(), "ロト6の数字を半分予想しました。", Toast.LENGTH_SHORT).show();
-
-                } else {
-                    Toast.makeText(getApplicationContext(), "本日の予想は終了しました。", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
         // 更新ボタン初期設定
+        FloatingActionButton fab = findViewById(R.id.fab);
         initFloatingActionButton(fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            // 更新ボタンイベント
+            @Override
+            public void onClick(View view) {
+                setOnClickFabEvent(view);
+            }
+        });
 
         // ドロワーメニュー
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -105,18 +81,28 @@ public class Loto6Activity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    /**
+     * fabの初期化処理
+     *
+     * @param fab
+     */
     private void initFloatingActionButton(FloatingActionButton fab) {
-        String savedDate = TmpControl.getInstance().loadString(Loto6Activity.this, Constants.LOTO6_TIME_KEY, "");
+        // 空なら実行されていないので予想処理をONにする
+        String savedDate = TmpControl.loadString(Loto6Activity.this, Constants.LOTO6_TIME_KEY, "");
         if (savedDate.isEmpty()) {
+            isExecuted = false;
             return;
         }
         try {
-            savedDate = "2019/07/19";
+            // 取得した日付が現在の日付より前なら予想処理をONにする
+            Date now = new Date();
             Date previous = new SimpleDateFormat("yyyy/MM/dd").parse(savedDate);
-
-            // 取得した日付が現在の日付より前ならfabをONにする
-            if (!DateControl.getInstance().before(previous, new Date())) {
+//            previous = onDebugCreateDate("2019/07/22");
+//            now = onDebugCreateDate("2019/07/29");
+            if (!DateControl.before(previous, now)) {
                 isExecuted = true;
+                Set<String> views = TmpControl.loadStringSet(Loto6Activity.this, Constants.LOTO6_VIEW_LIST_KEY);
+                ViewControl.makeTextViewOff(Loto6Activity.this, views);
             } else {
                 isExecuted = false;
             }
@@ -124,6 +110,54 @@ public class Loto6Activity extends AppCompatActivity
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), "前回の処理時間のロードに失敗しました", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    /**
+     * fabのクリックイベント処理
+     *
+     * @param view
+     */
+    private void setOnClickFabEvent(View view) {
+        // その日に実行済みか
+        if (isExecuted) {
+            Toast.makeText(getApplicationContext(), "本日の予想は終了しました", Toast.LENGTH_SHORT).show();
+        } else {
+            // 全テキストビューを初期化する
+            ViewControl.initTextView(Loto6Activity.this, TXET_VIEW_NUM);
+
+            // 乱数生成
+            ArrayList<Integer> randomList = RandomUtil.run(TXET_VIEW_NUM);
+
+            // ランダムにテキストビューをOFFにする
+            Set<String> offViewList = ViewControl.makeTextViewOff(Loto6Activity.this, randomList);
+
+            // 処理した時間を保存する
+            Date today = new Date();
+//            Date today = onDebugCreateDate("2019/07/22");
+            String saveDate = String.valueOf(new SimpleDateFormat("yyyy/MM/dd").format(today));
+            TmpControl.saveString(Loto6Activity.this, Constants.LOTO6_TIME_KEY, saveDate);
+
+            // offにしたテキストビューの名前リストを保存する
+            TmpControl.saveStringSet(Loto6Activity.this, Constants.LOTO6_VIEW_LIST_KEY, offViewList);
+
+            isExecuted = true;
+            Toast.makeText(getApplicationContext(), "ロト6の数字を半分予想しました。", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * デバッグ用 指定日付のDate型を作成する
+     *
+     * @param yyyymmdd
+     * @return
+     */
+    public Date onDebugCreateDate(String yyyymmdd) {
+        try {
+            return new SimpleDateFormat("yyyy/MM/dd").parse(yyyymmdd);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return new Date();
     }
 
     @Override

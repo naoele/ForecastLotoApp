@@ -3,18 +3,16 @@ package com.leaf.sa.forecastlotoapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
-import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.leaf.sa.forecastlotoapp.Utilities.RandomUtil;
@@ -56,13 +54,13 @@ public class Loto7Activity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 // 全テキストビューを初期化する
-                ViewControl.getInstance().initTextView(Loto7Activity.this, TXET_VIEW_NUM);
+                ViewControl.initTextView(Loto7Activity.this, TXET_VIEW_NUM);
 
                 // 乱数生成
-                ArrayList<Integer> randomList = RandomUtil.getInstance().run(TXET_VIEW_NUM);
+                ArrayList<Integer> randomList = RandomUtil.run(TXET_VIEW_NUM);
 
                 // ランダムにテキストビューをOFFにする
-                ViewControl.getInstance().makeTextViewOff(Loto7Activity.this, randomList);
+                ViewControl.makeTextViewOff(Loto7Activity.this, randomList);
 
                 Toast.makeText(getApplicationContext(), "ロト7の数字を半分予想しました。", Toast.LENGTH_SHORT).show();
             }

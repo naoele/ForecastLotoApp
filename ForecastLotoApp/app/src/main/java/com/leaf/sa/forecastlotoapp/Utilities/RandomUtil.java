@@ -2,23 +2,8 @@ package com.leaf.sa.forecastlotoapp.Utilities;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 public class RandomUtil {
-
-    // ----------------------------------------------------------------------
-    // インターフェース
-
-    /**
-     * {@ViewControl} のメソッドを呼びだして実行するインターフェース
-     *
-     * @return
-     */
-    public static RandomUtil getInstance() {
-        return _instance;
-    }
-
-    private static final RandomUtil _instance = new RandomUtil();
 
     // ----------------------------------------------------------------------
     // メソッド
@@ -29,7 +14,7 @@ public class RandomUtil {
      * @param targetNum
      * @return
      */
-    public ArrayList<Integer> run(int targetNum) {
+    public static ArrayList<Integer> run(int targetNum) {
 
         // listに指定値まで数値をいれる
         ArrayList<Integer> list = new ArrayList<Integer>();

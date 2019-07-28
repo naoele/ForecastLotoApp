@@ -12,7 +12,12 @@ public class Constants {
     /**
      * 処理時間データのキー ロト6
      */
-    public static final String LOTO6_TIME_KEY = "loto6TimeKey";
+    public static final String LOTO6_TIME_KEY = "loto6_time_key";
+
+    /**
+     *
+     */
+    public static final String LOTO6_VIEW_LIST_KEY = "loto6ViewListKey";
 
     /**
      * 処理時間データのキー ロト7
@@ -23,6 +28,12 @@ public class Constants {
      * 処理時間データのキー ミニロト
      */
     public static final String MINI_LOTO_TIME_KEY = "miniLotoTimeKey";
+
+
+    /**
+     * テキストビューのプレフィックス
+     */
+    public static final String ID_PREFIX_TXV = "txt_";
 
     /**
      * ロト6 左列の予想数字

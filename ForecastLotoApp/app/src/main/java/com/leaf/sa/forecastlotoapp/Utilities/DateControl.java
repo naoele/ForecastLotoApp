@@ -7,20 +7,6 @@ import java.util.GregorianCalendar;
 public class DateControl {
 
     // ----------------------------------------------------------------------
-    // インターフェース
-
-    /**
-     * {@DateControl} のメソッドを呼びだして実行するインターフェース
-     *
-     * @return
-     */
-    public static DateControl getInstance() {
-        return _instance;
-    }
-
-    private static final DateControl _instance = new DateControl();
-
-    // ----------------------------------------------------------------------
     // メソッド
 
     /**
