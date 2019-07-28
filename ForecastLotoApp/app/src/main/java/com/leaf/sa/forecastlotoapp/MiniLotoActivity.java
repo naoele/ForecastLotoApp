@@ -15,10 +15,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.leaf.sa.forecastlotoapp.Utilities.DateControl;
 import com.leaf.sa.forecastlotoapp.Utilities.RandomUtil;
+import com.leaf.sa.forecastlotoapp.Utilities.TmpControl;
 import com.leaf.sa.forecastlotoapp.Utilities.ViewControl;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Set;
 
 public class MiniLotoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,6 +42,11 @@ public class MiniLotoActivity extends AppCompatActivity
      */
     private String TAG = "MiniLotoActivity";
 
+    /**
+     * ロト予想を実行済みか判定するフラグ
+     */
+    private boolean isExecuted = false;
+
     // ----------------------------------------------------------------------
     // メソッド
 
@@ -48,21 +59,14 @@ public class MiniLotoActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // 更新ボタンイベント
+        // 更新ボタン初期設定
         FloatingActionButton fab = findViewById(R.id.fab);
+        initFloatingActionButton(fab);
         fab.setOnClickListener(new View.OnClickListener() {
+            // 更新ボタンイベント
             @Override
             public void onClick(View view) {
-                // 全テキストビューを初期化する
-                ViewControl.initTextView(MiniLotoActivity.this, TXET_VIEW_NUM);
-
-                // 乱数生成
-                ArrayList<Integer> randomList = RandomUtil.run(TXET_VIEW_NUM);
-
-                // ランダムにテキストビューをOFFにする
-                ViewControl.makeTextViewOff(MiniLotoActivity.this, randomList);
-
-                Toast.makeText(getApplicationContext(), "ミニロトの数字を半分予想しました。", Toast.LENGTH_SHORT).show();
+                setOnClickFabEvent(view);
             }
         });
 
@@ -74,6 +78,70 @@ public class MiniLotoActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    /**
+     * fabの初期化処理
+     *
+     * @param fab
+     */
+    private void initFloatingActionButton(FloatingActionButton fab) {
+        // 空なら実行されていないので予想処理をONにする
+        String savedDate = TmpControl.loadString(MiniLotoActivity.this, Constants.MINI_LOTO_TIME_KEY, "");
+        if (savedDate.isEmpty()) {
+            isExecuted = false;
+            return;
+        }
+        try {
+            // 取得した日付が現在の日付より前なら予想処理をONにする
+            Date now = new Date();
+            Date previous = new SimpleDateFormat("yyyy/MM/dd").parse(savedDate);
+//            previous = onDebugCreateDate("2019/07/22");
+//            now = onDebugCreateDate("2019/07/29");
+            if (!DateControl.before(previous, now)) {
+                isExecuted = true;
+                Set<String> views = TmpControl.loadStringSet(MiniLotoActivity.this, Constants.MINI_LOTO_VIEW_LIST_KEY);
+                ViewControl.makeTextViewOff(MiniLotoActivity.this, views);
+            } else {
+                isExecuted = false;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "前回の処理時間のロードに失敗しました", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * fabのクリックイベント処理
+     *
+     * @param view
+     */
+    private void setOnClickFabEvent(View view) {
+        // その日に実行済みか
+        if (isExecuted) {
+            Toast.makeText(getApplicationContext(), "本日の予想は終了しました", Toast.LENGTH_SHORT).show();
+        } else {
+            // 全テキストビューを初期化する
+            ViewControl.initTextView(MiniLotoActivity.this, TXET_VIEW_NUM);
+
+            // 乱数生成
+            ArrayList<Integer> randomList = RandomUtil.run(TXET_VIEW_NUM);
+
+            // ランダムにテキストビューをOFFにする
+            Set<String> offViewList = ViewControl.makeTextViewOff(MiniLotoActivity.this, randomList);
+
+            // 処理した時間を保存する
+            Date today = new Date();
+//            Date today = onDebugCreateDate("2019/07/22");
+            String saveDate = String.valueOf(new SimpleDateFormat("yyyy/MM/dd").format(today));
+            TmpControl.saveString(MiniLotoActivity.this, Constants.MINI_LOTO_TIME_KEY, saveDate);
+
+            // offにしたテキストビューの名前リストを保存する
+            TmpControl.saveStringSet(MiniLotoActivity.this, Constants.MINI_LOTO_VIEW_LIST_KEY, offViewList);
+
+            isExecuted = true;
+            Toast.makeText(getApplicationContext(), "ミニロトの数字を半分予想しました。", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -123,7 +191,7 @@ public class MiniLotoActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.nav_loto_7) {
             Log.d(TAG, "ロト7予想画面へ遷移");
-            Intent intent = new Intent(getApplication(), Loto7Activity.class);
+            Intent intent = new Intent(getApplication(), MiniLotoActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_mini_loto) {
             Log.d(TAG, "ミニロト予想画面へ遷移");

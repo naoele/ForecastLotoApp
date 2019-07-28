@@ -34,6 +34,10 @@ public class Constants {
      */
     public static final String MINI_LOTO_TIME_KEY = "miniLotoTimeKey";
 
+    /**
+     * テキストビュー名リスト ミニロト
+     */
+    public static final String MINI_LOTO_VIEW_LIST_KEY = "miniLotoViewListKey";
 
     /**
      * テキストビューのプレフィックス
