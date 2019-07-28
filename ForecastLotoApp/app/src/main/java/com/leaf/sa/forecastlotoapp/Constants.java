@@ -15,7 +15,7 @@ public class Constants {
     public static final String LOTO6_TIME_KEY = "loto6_time_key";
 
     /**
-     *
+     * テキストビュー名リスト ロト6
      */
     public static final String LOTO6_VIEW_LIST_KEY = "loto6ViewListKey";
 
@@ -23,6 +23,11 @@ public class Constants {
      * 処理時間データのキー ロト7
      */
     public static final String LOTO7_TIME_KEY = "loto7TimeKey";
+
+    /**
+     * テキストビュー名リスト ロト7
+     */
+    public static final String LOTO7_VIEW_LIST_KEY = "loto7ViewListKey";
 
     /**
      * 処理時間データのキー ミニロト
