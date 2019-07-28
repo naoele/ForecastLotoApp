@@ -34,9 +34,15 @@ public class ViewControl {
         return viewNames;
     }
 
+    /**
+     * 対象IDのテキストビューをOFFにする(複数)
+     *
+     * @param activity
+     * @param viewNames
+     * @return
+     */
     public static Set<String> makeTextViewOff(Activity activity, Set<String> viewNames) {
         Resources res = activity.getResources();
-//        Set<String> viewNames = new HashSet<>();
         for (String name : viewNames) {
             setTextViewOff(res, name, activity);
         }
