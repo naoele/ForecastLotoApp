@@ -7,6 +7,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!-- バナー広告ID -->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
     <!-- ドロワーメニュー名 -->
     <string name="menu_contents">メニュー</string>
     <string name="menu_loto6">ロト6予想画面</string>

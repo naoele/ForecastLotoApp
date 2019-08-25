@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.leaf.sa.forecastlotoapp.Utilities.DateControl;
 import com.leaf.sa.forecastlotoapp.Utilities.RandomUtil;
 import com.leaf.sa.forecastlotoapp.Utilities.TmpControl;
@@ -47,6 +49,11 @@ public class Loto6Activity extends AppCompatActivity
     private boolean isExecuted = false;
 
     // ----------------------------------------------------------------------
+    // メンバ/フィールド
+
+    private AdView mAdView;
+
+    // ----------------------------------------------------------------------
     // メソッド
 
     @Override
@@ -78,6 +85,11 @@ public class Loto6Activity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        // 広告
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     /**
