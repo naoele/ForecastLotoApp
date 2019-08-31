@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.leaf.sa.forecastlotoapp.Utilities.DateControl;
 import com.leaf.sa.forecastlotoapp.Utilities.RandomUtil;
 import com.leaf.sa.forecastlotoapp.Utilities.TmpControl;
@@ -27,6 +29,11 @@ import java.util.Set;
 
 public class Loto7Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    // ----------------------------------------------------------------------
+    // メンバ/フィールド
+
+    private AdView mAdView;
 
     // ----------------------------------------------------------------------
     // 固定値
@@ -77,6 +84,11 @@ public class Loto7Activity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        // 広告
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     /**
